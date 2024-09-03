@@ -1,23 +1,21 @@
-/* styles.css */
-
-@page {
+@page{
     size: A4;
-    margin: 1in;
 }
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 2em;
     color: #333;
     line-height: 1.6;
 }
 
 .container {
     width: 100%;
-    max-width: 210mm;
+    max-width: 300mm; 
+    min-width: none;
     margin: 0 auto;
-    padding: 1in;
+    padding: 0; 
+    box-sizing: border-box;
 }
 
 header {
@@ -34,11 +32,10 @@ header p {
     margin: 0.5em 0;
     font-size: 1em;
 }
-
 .content {
     display: flex;
     justify-content: space-between;
-    gap: 2em;
+    gap: 5em;
 }
 
 .left-column,
@@ -48,16 +45,10 @@ header p {
 
 h2 {
     background: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 0.5em;
-    margin: 0;
+    color: #000000;
+    padding: 0.3em 0;
     font-size: 1.2em;
-    border-radius: 0.3em;
-    text-decoration: underline;
-}
-
-section {
-    margin-bottom: 1em;
+    border-bottom: 1px solid #000;
 }
 
 ul {
@@ -70,63 +61,58 @@ li {
     margin-bottom: 0.5em;
 }
 
-strong {
-    font-weight: bold;
-}
-
-.skills ul,
-.experience ul {
-    margin-left: 1em;
-}
-
-.skills li,
-.experience li {
-    margin-bottom: 0.5em;
-}
-
-.about p,
-.education p,
-.experience p {
-    margin: 0.5em 0;
-}
-
-.education ul {
-    margin-top: 0.5em;
-}
-
-.interests ul {
-    margin-top: 0.5em;
-}
-
-.interests li {
-    margin-bottom: 0.5em;
-}
-
 @media print {
+    @page {
+        size: A4;
+        margin: 10mm; 
+    }
+
     body {
-        color: black;
-        background: white;
-    }
-    .container {
-        padding: 0;
         margin: 0;
-        width: 100%;
-        border: solid;
+        padding: 0;
     }
+
+    .container {
+        padding: 10mm; /* Reduce padding for print to save space */
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        gap: 2em;
+        flex-wrap: nowrap; /* Ensure content stays side-by-side */
+    }
+
+    header h1 {
+        font-size: 1.539em;
+    }
+
+    header p {
+        font-size: 0.7695em;
+    }
+
+    h2 {
+        font-size: 0.9405em;
+        padding: 0.171em 0;
+    }
+
+    p, li {
+        font-size: 0.7695em; 
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+@media (max-width: 700px) {
     .content {
         display: block;
     }
+
     .left-column,
     .right-column {
         width: 100%;
-    }
-    header {
-        margin-bottom: 1em;
-    }
-    header h1 {
-        font-size: 1.5em;
-    }
-    header p {
-        font-size: 0.9em;
+        margin-bottom: 2em; /* Add space between sections */
     }
 }
