@@ -1,0 +1,132 @@
+/* styles.css */
+
+@page {
+    size: A4;
+    margin: 1in;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 1in;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+header p {
+    margin: 0.5em 0;
+    font-size: 1em;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+.left-column,
+.right-column {
+    width: 48%;
+}
+
+h2 {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 0.5em;
+    margin: 0;
+    font-size: 1.2em;
+    border-radius: 0.3em;
+    text-decoration: underline;
+}
+
+section {
+    margin-bottom: 1em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.skills ul,
+.experience ul {
+    margin-left: 1em;
+}
+
+.skills li,
+.experience li {
+    margin-bottom: 0.5em;
+}
+
+.about p,
+.education p,
+.experience p {
+    margin: 0.5em 0;
+}
+
+.education ul {
+    margin-top: 0.5em;
+}
+
+.interests ul {
+    margin-top: 0.5em;
+}
+
+.interests li {
+    margin-bottom: 0.5em;
+}
+
+@media print {
+    body {
+        color: black;
+        background: white;
+    }
+    .container {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        border: solid;
+    }
+    .content {
+        display: block;
+    }
+    .left-column,
+    .right-column {
+        width: 100%;
+    }
+    header {
+        margin-bottom: 1em;
+    }
+    header h1 {
+        font-size: 1.5em;
+    }
+    header p {
+        font-size: 0.9em;
+    }
+}
